@@ -36,7 +36,7 @@ public class MainPageTests extends TestBase {
     @DisplayName("Проверка появления меню второго уровня")
     void subMenuVisibledTest() {
         step("Открываем 'https://www.x5.ru/'", () -> {
-            open("https://www.x5.ru/");
+            open("https://www.x5.ru/ru/");
         });
 
         step("Наводим в меню на пункт Компания", () -> {
@@ -52,7 +52,7 @@ public class MainPageTests extends TestBase {
     @DisplayName("Page title should have header text")
     void titleTest() {
         step("Open url 'https://www.x5.ru/'", () ->
-                open("https://www.x5.ru/"));
+                open("https://www.x5.ru/ru/"));
 
         step("Page title should have text 'Главная - X5 Group'", () -> {
             String expectedTitle = "Главная - X5 Group";
@@ -66,7 +66,7 @@ public class MainPageTests extends TestBase {
     @DisplayName("Page console log should not have errors")
     void consoleShouldNotHaveErrorsTest() {
         step("Open url 'https://www.x5.ru/'", () ->
-                open("https://www.x5.ru/"));
+                open("https://www.x5.ru/ru/"));
 
         step("Console logs should not contain text 'SEVERE'", () -> {
             String consoleLogs = DriverUtils.getConsoleLogs();
