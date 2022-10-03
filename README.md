@@ -1,4 +1,4 @@
-# Project in Allure TestOps with manual & automated tests
+# Проект по автоматизации тестирования X5 Group
 <a target="_blank" href="https://allure.autotests.cloud/project/%s">allure.autotests.cloud/project/%s</a> (ask admin@qa.guru for access)
 
 # Jenkins job

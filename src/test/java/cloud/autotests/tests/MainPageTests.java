@@ -5,6 +5,8 @@ import com.codeborne.selenide.Condition;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
@@ -44,7 +46,7 @@ public class MainPageTests extends TestBase {
         });
 
         step("Проверяем, что появилось меню второго уровня", () -> {
-            $(".header__sub-menu-link-item").shouldBe(Condition.visible);
+            $(".header__sub-menu-link-item").shouldBe(Condition.visible, Duration (10) );
         });
     }
 
