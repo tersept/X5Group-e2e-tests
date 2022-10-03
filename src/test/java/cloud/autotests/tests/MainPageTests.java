@@ -46,7 +46,7 @@ public class MainPageTests extends TestBase {
         });
 
         step("Проверяем, что появилось меню второго уровня", () -> {
-            $(".header__sub-menu-link-item").shouldBe(Condition.visible) );
+            $(".header__sub-menu-link-item").shouldBe(Condition.visible);
         });
     }
 
