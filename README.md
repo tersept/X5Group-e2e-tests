@@ -66,6 +66,15 @@ test
 -Dthreads=${THREADS}
 ```
 
+## <img src="images/Allure_Report.svg" width="25" height="25"  alt="Allure"/></a> Отчет в <a target="_blank" href="https://jenkins.autotests.cloud/job/X5Group-e2e-tests/16/allure/">Allure report</a>
+
+### Основное окно
+
+<p align="center">
+<img title="Allure Overview Dashboard" src="images/allure_main.png">
+</p>
+
+
 ## <img src="images/Telegram.svg" width="25" height="25"  alt="Allure"/></a> Уведомление в Telegram при помощи бота
 
 <p align="center">
