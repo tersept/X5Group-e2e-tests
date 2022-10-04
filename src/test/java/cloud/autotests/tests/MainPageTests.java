@@ -18,7 +18,7 @@ public class MainPageTests extends TestBase {
     @DisplayName("Проверка смены языка")
     void changeLanguageTest() {
         step("Открываем 'https://www.x5.ru/'", () -> {
-            open("https://www.x5.ru/");
+            open("https://www.x5.ru/ru/");
         });
 
         step("Нажимаем на кнопку  EN", () -> {
