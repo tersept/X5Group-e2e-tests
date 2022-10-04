@@ -71,3 +71,9 @@ test
 <p align="center">
 <img title="Allure Overview Dashboard" src="images/allure_telegram.png">
 </p>
+
+### <img src="images/Selenoid.svg" width="25" height="25"  alt="Allure"/></a> Примеры видео о прохождении тестов
+
+<p align="center">
+<img title="Selenoid Video" src="images/fd1c91ca7fe59d75.mp4" width="250" height="153"  alt="video"> <img title="Selenoid Video" src="images/c9a6c25b87313f25.mp4" width="250" height="153"  alt="video"> 
+</p>
