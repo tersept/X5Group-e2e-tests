@@ -32,23 +32,15 @@ public class DriverUtils {
     }
 
     public static URL getVideoUrl(String sessionId) {
-        String videoUrl = "https://selenoid.autotests.cloud/video/" + getSessionId() + ".mp4";
+        String videoUrl = Project.config.videoStorage() + sessionId + ".mp4";
 
         try {
             return new URL(videoUrl);
         } catch (MalformedURLException e) {
+            LOGGER.warn("[ALLURE VIDEO ATTACHMENT ERROR] Wrong test video url, {}", videoUrl);
             e.printStackTrace();
         }
         return null;
-//        String videoUrl = Project.config.videoStorage() + sessionId + ".mp4";
-//
-//        try {
-//            return new URL(videoUrl);
-//        } catch (MalformedURLException e) {
-//            LOGGER.warn("[ALLURE VIDEO ATTACHMENT ERROR] Wrong test video url, {}", videoUrl);
-//            e.printStackTrace();
-//        }
-//        return null;
     }
 
     public static String getConsoleLogs() { // todo refactor

@@ -7,10 +7,7 @@
 - [Сборка в Jenkins](#earth_africa-Jenkins-job)
 - [Запуск из терминала](#earth_africa-Запуск-тестов-из-терминала)
 - [Allure отчет](#earth_africa-Allure-отчет)
-- [Интеграция с Allure TestOps](#earth_africa-Интеграция-с-Allure-TestOps)
-- [Интеграция с Jira](#earth_africa-Интеграция-с-Jira)
 - [Отчет в Telegram](#earth_africa-Уведомление-в-Telegram-при-помощи-бота)
-- [Видео примеры прохождения тестов](#earth_africa-Примеры-видео-о-прохождении-тестов)
 
 ## :rocket: Технологии и инструменты
 
@@ -26,7 +23,7 @@
 <a href="https://www.jenkins.io/"><img src="images/Jenkins.svg" width="50" height="50"  alt="Jenkins"/></a>
 </p>
 
-## :scroll: Реализованные проверки
+## :scroll: Реализованные-проверки
 
 - ✓ Проверка смены языка.
 - ✓ Проверка появления меню второго уровня.
@@ -49,13 +46,13 @@
 * videoStorage (url address where you should get video)
 * threads (number of threads)
 
-## :computer: Запуск тестов из терминала
+### :computer: Запуск тестов из терминала
 
 ```bash
 gradle clean test
 ```
 
-## Удаленный запуск:
+### Удаленный запуск:
 
 ```bash
 clean
