@@ -7,7 +7,7 @@
 - [Сборка в Jenkins](#-jenkins-job)
 - [Запуск из терминала](#earth_africa-Запуск-тестов-из-терминала)
 - [Allure отчет](#earth_africa-Allure-отчет)
-- [Отчет в Telegram](#earth_africa-Уведомление-в-Telegram-при-помощи-бота)
+- [Отчет в Telegram](#-уведомление-в-telegram-при-помощи-бота)
 
 ## :rocket: Технологии и инструменты
 
