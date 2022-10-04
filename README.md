@@ -4,7 +4,7 @@
 
 - [Технологии и инструменты](#rocket-технологии-и-инструменты)
 - [Реализованные проверки](#scroll-реализованные-проверки)
-- [Сборка в Jenkins](#earth_africa-Jenkins-job)
+- [Сборка в Jenkins](#-jenkins-job)
 - [Запуск из терминала](#earth_africa-Запуск-тестов-из-терминала)
 - [Allure отчет](#earth_africa-Allure-отчет)
 - [Отчет в Telegram](#earth_africa-Уведомление-в-Telegram-при-помощи-бота)
