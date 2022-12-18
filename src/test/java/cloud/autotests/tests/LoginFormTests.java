@@ -21,7 +21,32 @@ public class LoginFormTests {
                     .clickSubmit();
         });
         step("Проверяем что зашли", () -> {
-        loginPage.checkLogin();
+            loginPage.checkLogin();
         });
+    }
+
+    @Test
+    void changeDomainGmail() {
+        step("Меняем домен", () -> {
+            loginPage.openPage()
+                    .openModal()
+                    .setGmail();
+        });
+        step("Проверяем, что домен поменялся", () -> {
+            loginPage.checkGmail();
+        });
+
+    }
+    @Test
+    void changeDomainYandex() {
+        step("Меняем домен", () -> {
+            loginPage.openPage()
+                    .openModal()
+                    .setYandex();
+        });
+        step("Проверяем, что домен поменялся", () -> {
+            loginPage.checkYandex();
+        });
+
     }
 }

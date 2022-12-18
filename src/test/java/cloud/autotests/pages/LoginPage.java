@@ -19,12 +19,10 @@ public class LoginPage {
     public LoginPage openModal() throws InterruptedException {
         $(byText("Войти")).click();
         $(".ag-popup__frame__layout__iframe").should(appear);
-        //    $("#login-content").should(appear);
         return this;
     }
 
     public LoginPage setLogin() {
-        //$(".ag-popup__frame__layout__iframe.input-0-2-71").setValue("qaguru").pressEnter();
         switchTo().frame($("[class='ag-popup__frame__layout__iframe']"));
         $(".input-0-2-71").setValue("qaguru");
         return this;
@@ -42,6 +40,34 @@ public class LoginPage {
 
     public LoginPage checkLogin() {
         $(".ph-avatar-img").shouldBe(visible);
+        return this;
+    }
+
+    public LoginPage setYandex() {
+        switchTo().frame($("[class='ag-popup__frame__layout__iframe']"));
+        $(".ProvidersListItemYandex").click();
+        return this;
+    }
+
+    public LoginPage checkYandex() {
+        $(".domain-select").shouldHave(text("@yandex.ru"));
+        return this;
+    }
+
+    public LoginPage setGmail() {
+        switchTo().frame($("[class='ag-popup__frame__layout__iframe']"));
+        $(".ProvidersListItemGoogle").click();
+        return this;
+    }
+
+    public LoginPage checkGmail() {
+        $(".domain-select").shouldHave(text("@gmail.com"));
+        return this;
+    }
+
+    public LoginPage setMail() {
+        $(".ProvidersListItemIconYandex").click();
+        $("[data-test-id='domain-select-value:yandex.ru']").shouldHave(text("@mail.com"));
         return this;
     }
 }
