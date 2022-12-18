@@ -8,7 +8,8 @@ repositories {
 }
 
 def allureVersion = "2.17.3",
-    selenideVersion = "6.5.0",
+    selenideVersion = "6.6.6",
+    ownerVersion = "1.0.4",
     junitVersion = "5.8.2"
 
 allure {
@@ -35,6 +36,7 @@ dependencies {
             "org.aeonbits.owner:owner:1.0.12",
             "org.assertj:assertj-core:3.19.0",
             "org.slf4j:slf4j-simple:1.7.29",
+            "org.aeonbits.owner:owner:$ownerVersion",
             "org.junit.jupiter:junit-jupiter:$junitVersion")
 }
 

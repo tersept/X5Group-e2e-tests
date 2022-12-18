@@ -3,6 +3,8 @@ package cloud.autotests.tests;
 import cloud.autotests.helpers.DriverUtils;
 import com.codeborne.selenide.Condition;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 
 import java.time.Duration;
@@ -12,9 +14,9 @@ import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
 
-
 public class MainPageTests extends TestBase {
     @Test
+    @Tags({@Tag("web"),@Tag("regress")})
     @DisplayName("Проверка смены языка")
     void changeLanguageTest() {
         step("Открываем 'https://www.x5.ru/'", () -> {
@@ -33,7 +35,7 @@ public class MainPageTests extends TestBase {
             $(".header__content-menu").shouldHave(Condition.text("Press Centre"));
         });
     }
-
+    @Tags({@Tag("web"),@Tag("regress")})
     @Test
     @DisplayName("Проверка появления меню второго уровня")
     void subMenuVisibledTest() {
@@ -63,7 +65,7 @@ public class MainPageTests extends TestBase {
             assertThat(actualTitle).isEqualTo(expectedTitle);
         });
     }
-
+    @Tags({@Tag("web"),@Tag("regress")})
     @Test
     @DisplayName("Page console log should not have errors")
     void consoleShouldNotHaveErrorsTest() {
