@@ -5,17 +5,17 @@ import org.junit.jupiter.api.Test;
 
 import static io.qameta.allure.Allure.step;
 
-public class LoginFormTests {
+public class LoginFormTests extends TestBase {
     LoginPage loginPage = new LoginPage();
-    String login,
-            password;
 
     @Test
     void fillForm() {
-        step("Заполняем поля", () -> {
+        step("Открываем страницу и модальное окно", () -> {
             loginPage.openPage()
-                    .openModal()
-                    .setLogin()
+                    .openModal();
+        });
+        step("Заполняем поля", () -> {
+            loginPage.setLogin()
                     .clickSubmit()
                     .setPassword()
                     .clickSubmit();
@@ -37,6 +37,7 @@ public class LoginFormTests {
         });
 
     }
+
     @Test
     void changeDomainYandex() {
         step("Меняем домен", () -> {

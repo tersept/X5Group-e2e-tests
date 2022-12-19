@@ -1,62 +1,54 @@
 package cloud.autotests.tests;
 
 import cloud.autotests.helpers.DriverUtils;
-import com.codeborne.selenide.Condition;
+import cloud.autotests.pages.X5MainPage;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 
-import java.time.Duration;
-
-import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
-
+@Tags({@Tag("web"),@Tag("regress")})
 public class MainPageTests extends TestBase {
-    @Test
-    @Tags({@Tag("web"),@Tag("regress")})
-    @DisplayName("Проверка смены языка")
-    void changeLanguageTest() {
-        step("Открываем 'https://www.x5.ru/'", () -> {
-            open("https://www.x5.ru/ru/");
-        });
-
-        step("Нажимаем на кнопку  EN", () -> {
-            $(".header__lang").click();
-        });
-
-        step("Проверяем, что язык на сайте поменялся", () -> {
-            $(".header__content-menu").shouldHave(Condition.text("Company"));
-            $(".header__content-menu").shouldHave(Condition.text("Consumer"));
-            $(".header__content-menu").shouldHave(Condition.text("For Partners"));
-            $(".header__content-menu").shouldHave(Condition.text("Investors"));
-            $(".header__content-menu").shouldHave(Condition.text("Press Centre"));
-        });
-    }
-    @Tags({@Tag("web"),@Tag("regress")})
+    X5MainPage x5MainPage = new X5MainPage();
     @Test
     @DisplayName("Проверка появления меню второго уровня")
-    void subMenuVisibledTest() {
-        step("Открываем 'https://www.x5.ru/'", () -> {
-            open("https://www.x5.ru/ru/");
+    void subMenuVisibleTest() {
+        step("Открываем 'https://www.x5.ru/ru/'", () -> {
+            x5MainPage.openPage();
         });
-
         step("Наводим в меню на пункт Компания", () -> {
-            $(byText("Компания")).hover();
+            x5MainPage.hoverMenu();
         });
 
         step("Проверяем, что появилось меню второго уровня", () -> {
-            $(".header__sub-menu-link-item").shouldBe(Condition.visible);
+            x5MainPage.checkSecondMenu();
+        });
+    }
+    @Test
+    @DisplayName("Проверка смены языка")
+    void changeLanguageTest() {
+        step("Открываем 'https://www.x5.ru/'", () -> {
+           x5MainPage.openPage();
+        });
+
+        step("Нажимаем на кнопку  EN", () -> {
+            x5MainPage.changeLanguage();
+        });
+
+        step("Проверяем, что язык на сайте поменялся", () -> {
+            x5MainPage.checkLanguage();
         });
     }
 
     @Test
     @DisplayName("Page title should have header text")
     void titleTest() {
-        step("Open url 'https://www.x5.ru/'", () ->
-                open("https://www.x5.ru/ru/"));
+        step("Open url 'https://www.x5.ru/'", () ->{
+               x5MainPage.openPage();
+        });
 
         step("Page title should have text 'Главная - X5 Group'", () -> {
             String expectedTitle = "Главная - X5 Group";
@@ -65,12 +57,12 @@ public class MainPageTests extends TestBase {
             assertThat(actualTitle).isEqualTo(expectedTitle);
         });
     }
-    @Tags({@Tag("web"),@Tag("regress")})
     @Test
     @DisplayName("Page console log should not have errors")
     void consoleShouldNotHaveErrorsTest() {
-        step("Open url 'https://www.x5.ru/'", () ->
-                open("https://www.x5.ru/ru/"));
+        step("Open url 'https://www.x5.ru/'", () ->{
+               x5MainPage.openPage();
+        });
 
         step("Console logs should not contain text 'SEVERE'", () -> {
             String consoleLogs = DriverUtils.getConsoleLogs();

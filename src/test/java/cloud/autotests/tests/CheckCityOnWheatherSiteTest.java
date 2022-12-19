@@ -1,5 +1,6 @@
 package cloud.autotests.tests;
 
+import cloud.autotests.models.City;
 import com.codeborne.selenide.CollectionCondition;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -14,7 +15,7 @@ import java.util.stream.Stream;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
-public class CheckCityOnWheatherSiteTest {
+public class CheckCityOnWheatherSiteTest extends TestBase {
     @CsvSource(value = {"Москва, Москва",
             "Чебоксары, Чебоксары"})
     @ParameterizedTest(name = "Проверяем что после ввода названия города {0} в результате отображается город {1}")
@@ -43,7 +44,7 @@ public class CheckCityOnWheatherSiteTest {
     @ParameterizedTest
     void checkEnumCityAndCountry(City city) {
         open("https://pogoda.mail.ru/");
-        $("input.js-input").setValue(city.name()).pressEnter();
+        $("input.js-input").setValue(city.toString()).pressEnter();
         $("a.information__link").shouldHave(text("Россия"));
     }
 }

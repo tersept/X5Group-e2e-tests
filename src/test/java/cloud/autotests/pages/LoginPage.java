@@ -1,15 +1,10 @@
 package cloud.autotests.pages;
 
-import com.codeborne.selenide.SelenideElement;
-
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class LoginPage {
-    private SelenideElement loginInput = $("name.username"),
-            passwordInput = $("name.password");
-
     public LoginPage openPage() {
         open("https://mail.ru/");
         $(".ph-login").shouldHave(text("Войти"));
